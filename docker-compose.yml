@@ -16,6 +16,22 @@ services:
       - sqlbackup:/var/opt/sqlserver/backup
 volumes:
   sqlsystem:
+  
   sqldata:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /opt/docker/volumes/sfaone/sqlserver/data
   sqllog:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /opt/docker/volumes/sfaone/sqlserver/log
   sqlbackup:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /opt/docker/volumes/sfaone/sqlserver/backup
